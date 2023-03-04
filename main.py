@@ -3,7 +3,8 @@ import requests
 from bs4 import BeautifulSoup
 
 base = 'https://onepiecechapters.com'
-res = requests.get('https://onepiecechapters.com/mangas/2/bleach?&date=8-2-2023-14')
+url = 'https://onepiecechapters.com/mangas/2/bleach?&date=8-2-2023-14'
+res = requests.get(url)
 soup = BeautifulSoup(res.text, features='lxml')
 fnd = soup.find_all('a', attrs={'class':"block border border-border bg-card mb-3 p-3 rounded"})
 fnd = fnd[::-1]
